@@ -60,9 +60,10 @@ if [ -n "$failsafe" ]; then
 	# here we put everything that needs to be started after running "statx"
 	xrdb -merge "$HOME/.Xresources"
 
-	# set caps lock to tab
-	xmodmap -e "keycode 66 = Tab"
-	
+	# source ~/.Xmodmap for custom keymaps
+	# (setting Caps Lock -> Tab)
+	xmodmap ~/.Xmodmap
+
 	# remove mouse cursor
 	xbanish -s -t 2 & #-m nw &
 
