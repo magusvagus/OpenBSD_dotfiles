@@ -148,7 +148,7 @@ if [[ -z "$ST_TEST" ]]; then
 else
 	# git script to show git status
 	# if git script exists, source it
-	if [ -f "/home/ed/.ksh-git-prompt/ksh-gitprompt.sh" ]; then
+	if [ -f "$HOME/.ksh-gitprompt.sh" ]; then
 		GIT_PS1_SHOWUPSTREAM="auto"
 		GIT_PS1_DESCRIBE_STYLE="contains"
 		GIT_PS1_SHOWUPSTREAM="verbose"
@@ -157,7 +157,7 @@ else
 		GIT_PS1_SHOWUNTRACKEDFILES="yes"
 
 		# source ksh git script
-		. ~/.ksh-git-prompt/ksh-gitprompt.sh
+		. $HOME/.ksh-gitprompt.sh
 
 		# set custom ksh PS1 command line /w git
 		export PS1=" \[\e[35m\]󰊠\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[32m\]\w\[\e[m\]\$(__git_ps1 \" \e[35m\n │\e[36m %s\e[36m]\n\e[35m └󰘧→\e[m\") "   
