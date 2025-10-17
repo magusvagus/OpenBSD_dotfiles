@@ -77,7 +77,7 @@ if [ -n "$failsafe" ]; then
 	feh --bg-scale /home/ed/wallpaper/gruvbox/hyundai.png &
 
 	# starts compositor
-	picom --config ~/.config/picom/picom.conf &
+	picom --config /home/ed/.config/picom/picom.conf &
 
 	# sets custom bash command line
 	# export PS1=" \[\e[32m\]󰊠\[\e[m\]\[\e[32m\] \[\e[m\]\[\e[32m\]\w\[\e[m\] "

@@ -107,6 +107,8 @@ function display
 	elif [[ $1 = "--off" ]]; then
 		xset s off -dpms;  
 		printf "Display power management -> disabled\n"
+	elif [[ $1 = "--brighness" ]]; then
+		doas /sbin/wsconsctl display.brightness=$2;
 	else
 		printf "ERR: invalid flag\n";
 	fi
@@ -144,6 +146,18 @@ if [[ -z "$ST_TEST" ]]; then
 	echo " Entering tyy mode."
 	echo " "
 	alias neofetch='\neofetch --config none'
+
+		# experimental
+	alias swallow='swlw'
+	alias cal='ccal'
+	alias weather='wttr'
+
+	# program shorcuts
+	alias ls='ls'
+	alias tshark='tshark --color'
+	alias cat='cat'
+	alias vi='vim'
+		# experimental
 
 else
 	# git script to show git status
@@ -216,7 +230,7 @@ alias ls='lsd'
 alias tshark='tshark --color'
 alias cat='bat'
 
-alias vim='nvim'
+#alias vim='nvim'
 alias vi='nvim'
 
 # bash '$ doas !!' alternative for ksh

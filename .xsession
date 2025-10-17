@@ -12,6 +12,10 @@
 	# set mouse to default theme (so it doesent blink while bootup)
     	/usr/X11R6/bin/xsetroot -xcf /home/ed/.local/share/icons/Everforest-C/cursors/default 32
 
+	# source ~/.Xmodmap for custom keymaps
+	# (setting Caps Lock -> Tab)
+	xmodmap ~/.Xmodmap
+
 	# remove mouse cursor
 	xbanish -s -t 2 -m nw &
 
@@ -19,7 +23,7 @@
 	keynav "loadconfig ~/.config/keynav/keynavrc" &
 
 	# locks screen after 10 minutes
-    	xidle -area 6 -delay 5 -ne -program "/usr/local/bin/slock" -timeout 599 &
+   	xidle -area 6 -delay 5 -ne -program "/usr/local/bin/slock" -timeout 599 &
 	
 	# sets wallpaper
 	feh --bg-scale /home/ed/wallpaper/gruvbox/hyundai.png &
