@@ -13,7 +13,7 @@
     	/usr/X11R6/bin/xsetroot -xcf /home/ed/.local/share/icons/Everforest-C/cursors/default 32
 
 	# source ~/.Xmodmap for custom keymaps
-	# (setting Caps Lock -> Tab)
+	# (setting: Caps Lock -> Tab)
 	xmodmap ~/.Xmodmap
 
 	# remove mouse cursor
