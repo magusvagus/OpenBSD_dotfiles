@@ -10,10 +10,10 @@
 	xrdb -merge "$HOME/.Xresources"
 
 	# set mouse to default theme (so it doesent blink while bootup)
-    	/usr/X11R6/bin/xsetroot -xcf /home/ed/.local/share/icons/Everforest-C/cursors/default 32
+    	/usr/X11R6/bin/xsetroot -xcf /usr/local/share/icons/Everforest-C/cursors/default 32
 
 	# source ~/.Xmodmap for custom keymaps
-	# (setting: Caps Lock -> Tab)
+	# (setting Caps Lock -> Tab)
 	xmodmap ~/.Xmodmap
 
 	# remove mouse cursor

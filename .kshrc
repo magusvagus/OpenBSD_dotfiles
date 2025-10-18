@@ -41,12 +41,8 @@ export EDITOR="$VISUAL"
 LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-# activate vim mode for ksh
-set -o vi
-set -o vi-tabcomplete #enable tab completion in vi mode using =
-
 # add every command used to history
-export PROMPT_COMMAND='history -a'
+#export PROMPT_COMMAND='history -a'
 
 # set ksh history file size 
 # (number of stored commands) defualt is 500
@@ -54,6 +50,9 @@ export HISTFILE="$HOME/.ksh_history"
 export HISTSIZE=2500
 export HISTFILESIZE=2500
 
+# activate vim mode for ksh
+set -o vi
+set -o vi-tabcomplete #enable tab completion in vi mode using =
 
 # ---------
 # FUNCTIONS

@@ -2,7 +2,7 @@
 
 REPO_PATH="$HOME/git/OpenBSD_dotfiles"
 
-set -A DOTFILES ".ksh-gitprompt.sh" ".kshrc" ".profile" ".tmux.conf" ".xinitrc" ".Xmodmap" ".xsession"
+set -A DOTFILES ".ksh-gitprompt.sh" ".kshrc" ".profile" ".tmux.conf" ".xinitrc" ".Xmodmap" ".xsession" ".Xresources"
 
 printf "\n";
 
