@@ -4,17 +4,17 @@
 
 	# initialize korn shell profile file
 	# this must be only used when using XENODM, as it uses natively xterm as a login shell not our custom one
-	. /home/ed/.profile
+	. "$HOME/.profile"
 
 	# here we put everything that needs to be started after running "statx"
 	xrdb -merge "$HOME/.Xresources"
 
 	# set mouse to default theme (so it doesent blink while bootup)
-    	/usr/X11R6/bin/xsetroot -xcf /usr/local/share/icons/Everforest-C/cursors/default 32
+    /usr/X11R6/bin/xsetroot -xcf /usr/local/share/icons/Everforest-C/cursors/default 32
 
 	# source ~/.Xmodmap for custom keymaps
 	# (setting Caps Lock -> Tab)
-	xmodmap ~/.Xmodmap
+	xmodmap "$HOME/.Xmodmap"
 
 	# remove mouse cursor
 	xbanish -s -t 2 -m nw &
@@ -23,7 +23,7 @@
 	keynav "loadconfig ~/.config/keynav/keynavrc" &
 
 	# locks screen after 10 minutes
-   	xidle -area 6 -delay 5 -ne -program "/usr/local/bin/slock" -timeout 599 &
+	xidle -area 6 -delay 5 -ne -program "/usr/local/bin/slock" -timeout 599 &
 	
 	# sets wallpaper
 	feh --bg-scale /home/ed/wallpaper/gruvbox/hyundai.png &
@@ -33,7 +33,7 @@
 
 	# sets custom bash command line
 	# export PS1=" \[\e[32m\]󰊠\[\e[m\]\[\e[32m\] \[\e[m\]\[\e[32m\]\w\[\e[m\] "
-	 
+
 	# if you have a ThinkPad, the following lines enable TrackPoint
 	# scrolling by dragging with the middle button.
 	xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation" 1 

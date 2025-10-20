@@ -54,6 +54,10 @@ export HISTFILESIZE=2500
 set -o vi
 set -o vi-tabcomplete #enable tab completion in vi mode using =
 
+# export socket for mpd
+export MPD_HOST="$HOME/.config/mpd/socket"
+
+
 # ---------
 # FUNCTIONS
 # ---------
@@ -235,6 +239,7 @@ alias vi='nvim'
 # bash '$ doas !!' alternative for ksh
 alias doas!!='doas $(fc -ln -1)'
 
+alias music='ncmpcpp'
 
 
 

@@ -13,4 +13,5 @@ export ENV
 
 export PATH HOME TERM
 
+export MPD_HOST="$HOME/.config/mpd/socket"
 #source ~/.bashrc
