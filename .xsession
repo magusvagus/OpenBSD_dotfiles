@@ -26,7 +26,7 @@
 	xidle -area 6 -delay 5 -ne -program "/usr/local/bin/slock" -timeout 599 &
 	
 	# sets wallpaper
-	feh --bg-scale /home/ed/wallpaper/gruvbox/hyundai.png &
+	feh --bg-scale /home/ed/wallpaper/gruvbox/mountains_nature.jpg &
 
 	# starts compositor
 	picom --config ~/.config/picom/picom.conf &
