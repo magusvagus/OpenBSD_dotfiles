@@ -1,12 +1,10 @@
 #! /bin/sh
-	
-
 
 	# initialize korn shell profile file
 	# this must be only used when using XENODM, as it uses natively xterm as a login shell not our custom one
 	. "$HOME/.profile"
 
-	# here we put everything that needs to be started after running "statx"
+	# here we put everything that needs to be started after running "startx"
 	xrdb -merge "$HOME/.Xresources"
 
 	# set mouse to default theme (so it doesent blink while bootup)
@@ -20,19 +18,16 @@
 	xbanish -s -t 2 -m nw &
 
 	# allows to use the mouse using keyboard
-	keynav "loadconfig ~/.config/keynav/keynavrc" &
+	keynav "loadconfig $HOME/.config/keynav/keynavrc" &
 
 	# locks screen after 10 minutes
 	xidle -area 6 -delay 5 -ne -program "/usr/local/bin/slock" -timeout 599 &
 	
 	# sets wallpaper
-	feh --bg-scale /home/ed/wallpaper/nature/mountains_nature.jpg &
+	feh --bg-scale "$HOME/wallpaper/current_active/*" &
 
 	# starts compositor
-	picom --config ~/.config/picom/picom.conf &
-
-	# sets custom bash command line
-	# export PS1=" \[\e[32m\]󰊠\[\e[m\]\[\e[32m\] \[\e[m\]\[\e[32m\]\w\[\e[m\] "
+	picom --config "$HOME/.config/picom/picom.conf" &
 
 	# if you have a ThinkPad, the following lines enable TrackPoint
 	# scrolling by dragging with the middle button.
