@@ -88,11 +88,11 @@ function swlw
 # turn on webcam streaming
 function streaming
 {  
-	if [[ $1 = "--on" ]]; then
+	if [[ $1 = "on" ]]; then
 		doas sysctl kern.audio.record=1;
 		xhost +local:;
 		printf "Video streaming -> enabled\n";
-	elif [[ $1 = "--off" ]]; then
+	elif [[ $1 = "off" ]]; then
 		doas sysctl kern.audio.record=0;
 		xhost -local:;
 		printf "Video streaming -> disabled\n";
@@ -104,13 +104,13 @@ function streaming
 # toggle display power saver
 function display
 {
-	if [[ $1 = "--on" ]]; then
+	if [[ $1 = "on" ]]; then
 		xset s on +dpms;  
 		printf "Display power management -> enabled\n"
-	elif [[ $1 = "--off" ]]; then
+	elif [[ $1 = "off" ]]; then
 		xset s off -dpms;  
 		printf "Display power management -> disabled\n"
-	elif [[ $1 = "--brighness" ]]; then
+	elif [[ $1 = "brighness" ]]; then
 		doas /sbin/wsconsctl display.brightness=$2;
 	else
 		printf "ERR: invalid flag\n";
