@@ -1,4 +1,4 @@
-:  #this is korn shell's  -> #!
+#!/bin/ksh
 
 # ------------------
 # DEAD CODE TO CHECK

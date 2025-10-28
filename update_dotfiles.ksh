@@ -14,7 +14,7 @@ set -A DOTFILES \
 
 printf "\n";
 
-for DOTFILE in "${DOTFILES[*]}"; do
+for DOTFILE in "${DOTFILES[@]}"; do
 	if [[ -e $HOME/$DOTFILE ]]; then
 		printf "[ OK ] %-18s inside ->	%s -> UPDATED\n" "$DOTFILE" "$HOME";
 		cp $HOME/$DOTFILE $REPO_PATH
