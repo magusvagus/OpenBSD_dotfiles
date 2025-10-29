@@ -64,10 +64,27 @@ export MPD_HOST="$HOME/.config/mpd/socket"
 
 function wttr
 {
-	if [[ -z $1 ]]; then
-		curl -s wttr.in/$(curl -s ipinfo.io/city);
+	# add help option
+	typeset _input _set_place
+
+	for _arg in "$@";do
+		case "$_arg" in
+			*)
+				if [[ $# -gt 1 ]]; then
+					printf "weather: Too many arguments.\n"
+					return 1
+				fi
+
+				_set_place=true
+				_input="$1"
+				;;
+		esac
+	done
+
+	if [[ "$_set_place" == true ]]; then
+		curl wttr.in/$_input;
 	else
-		curl wttr.in/$1;
+		curl -s wttr.in/$(curl -s ipinfo.io/city);
 	fi
 }
 
@@ -148,7 +165,7 @@ if [[ -z "$ST_TEST" ]]; then
 	echo " No st terminal detected!"
 	echo " Entering tyy mode."
 	echo " "
-	alias neofetch='\neofetch --config none'
+	alias neofetch='\fastfetch --config none'
 
 		# experimental
 	alias swallow='swlw'
@@ -178,12 +195,12 @@ else
 
 		# set custom ksh PS1 command line /w git
 		export PS1=" \[\e[35m\]󱢗\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[32m\]\w\[\e[m\]\$(__git_ps1 \" \e[35m\n │\e[36m %s\e[36m]\n\e[35m └󰘧→\e[m\") "   
-		alias neofetch='neofetch --ascii_distro OpenBSD_small'
+		alias neofetch='fastfetch'
 
 	else
 		# PS1 without git
 		export PS1=" \[\e[35m\]󱢗\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[32m\]\w\[\e[m\] "
-		alias neofetch='neofetch --ascii_distro OpenBSD_small'
+		alias neofetch='fastfetch'
 	fi
 
 	# run the termnal only with tmux, when the X server/ st term is running.
@@ -194,7 +211,7 @@ else
 
 	#run neofetch if st terminal is present
 	clear
-	neofetch --ascii_distro OpenBSD_small
+	fastfetch
 fi
 
 
