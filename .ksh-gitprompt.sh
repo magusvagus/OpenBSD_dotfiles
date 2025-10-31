@@ -217,13 +217,13 @@ echo n_stop;
 		"") # no upstream
 			p="" ;;
 		"0	0") # equal to upstream
-			p="| eql" ;;
+			p="| eql " ;;
 		"0	"*) # ahead of upstream
-			p="| ahd+${count#0	}" ;;
+			p="| ahd+${count#0	} " ;;
 		*"	0") # behind upstream
-			p="| bhnd-${count%	0}" ;;
+			p="| bhnd-${count%	0} " ;;
 		*)	    # diverged from upstream
-			p="| div+${count#*	}-${count%	*}" ;;
+			p="| div+${count#*	}-${count%	*} " ;;
 		esac
 		if [[ -n "$count" && -n "$name" ]]; then
 			__git_ps1_upstream_name=$(git rev-parse \
@@ -547,7 +547,8 @@ __git_ps1 ()
 	fi
 
 	local f="$w$i$s$u"
-	local gitstring="$c$b${f:+$z$f}$r$p"
+	# modified and added [
+	local gitstring="[ $c$b${f:+$z$f}$r$p"
 
 	if [ $pcmode = yes ]; then
 		if [ "${__git_printf_supports_v-}" != yes ]; then

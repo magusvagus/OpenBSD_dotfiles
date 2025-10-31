@@ -21,7 +21,7 @@
 	keynav "loadconfig $HOME/.config/keynav/keynavrc" &
 
 	# locks screen after 10 minutes
-	xidle -timeout 599 -program "/usr/local/bin/slock" &
+	xidle -area 6 -delay 5 -ne -program "/usr/local/bin/slock" -timeout 599 &
 	
 	# sets wallpaper
 	feh --bg-scale --randomize "$HOME/wallpaper/current_active/*" &
