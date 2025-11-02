@@ -1,2 +1,3 @@
-clear lock
-keycode 66 = Tab
+clear Lock
+!sets Caps lock key -> tab
+keycode 66 = Tab  
