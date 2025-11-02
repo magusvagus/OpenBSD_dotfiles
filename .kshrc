@@ -206,7 +206,8 @@ else
 	# run the termnal only with tmux, when the X server/ st term is running.
 	# for tmux keep starting with terminal, not replicating inside itself
 	if [[ -z $TMUX ]]; then
-		exec tmux
+		#exec tmux
+		tmux new
 	fi
 
 	#run neofetch if st terminal is present
