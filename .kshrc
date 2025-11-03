@@ -154,11 +154,14 @@ function ccal
 # promt was 'pr[o]cess'
 
 
+# currently $DISPLAY is set for testing, otherwise 
+# its best to go back to ST
+
 # XTEST=$(ps -e | grep X)
 # XENOTEST=$(ps aux | grep -ow 'x[e]nodm')
-ST_TEST=$(ps aux | grep -ow 's[t]') # look for st terminal
+#ST_TEST=$(ps aux | grep -ow 's[t]') # look for st terminal
 
-if [[ -z "$ST_TEST" ]]; then
+if [[ -z "$DISPLAY" ]]; then
 
 	echo " "
 	#echo " No X server detected!"
