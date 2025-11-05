@@ -2,6 +2,7 @@
 
 REPO_PATH="$HOME/git/OpenBSD_dotfiles"
 
+# $HOME dotfiles
 set -A DOTFILES \
 	".ksh-gitprompt.sh" \
 	".kshrc" \
@@ -11,6 +12,10 @@ set -A DOTFILES \
 	".Xmodmap" \
 	".xsession" \
 	".Xresources" \
+
+# .config files
+set -A DOT_CONF \
+	".config/fastfetch/" \
 
 printf "\n";
 
