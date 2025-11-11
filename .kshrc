@@ -121,14 +121,40 @@ function streaming
 # toggle display power saver
 function display
 {
-	if [[ $1 = "on" ]]; then
+	# add help option
+	# add info option when used without flag
+	typeset _dpms _brightness _input
+
+	for _arg in "$@";do
+		case "$_arg" in
+			on)
+				_dpms=true
+				_input="$1"
+				;;
+			off)
+				_dpms=false
+				_input="$1"
+				;;
+			brightness)
+				_brightness=true
+				shift
+				_input="$1"
+				;;
+			*)
+				printf "Unknown option: %s\n" "$1" >&2
+				exit 1
+				;;
+		esac
+	done
+
+	if [[ $_dpms == true ]]; then
 		xset s on +dpms;  
 		printf "Display power management -> enabled\n"
-	elif [[ $1 = "off" ]]; then
+	elif [[ $_dpms == false ]]; then
 		xset s off -dpms;  
 		printf "Display power management -> disabled\n"
-	elif [[ $1 = "brighness" ]]; then
-		doas /sbin/wsconsctl display.brightness=$2;
+	elif [[ $_brightness == true ]]; then
+		doas /sbin/wsconsctl display.brightness=$_input;
 	else
 		printf "ERR: invalid flag\n";
 	fi
