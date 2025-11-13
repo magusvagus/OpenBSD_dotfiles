@@ -135,18 +135,20 @@ function streaming
 	fi
 }
 
-# toggle display power saver
+# TODO extract hdmi into seperate function
+# toggle display power saver, screen mirroring
 function display
 {
 	# add help option
 	# add info option when used without flag
-	typeset _dpms _brightness _input
+	typeset _dpms _brightness _input _hdmi _resolution
+	typeset _direction
 
-	for _arg in "$@";do
-		case "$_arg" in
+	while [[ $# -gt 0 ]]; do
+		case "$1" in
 			on)
 				_dpms=true
-				_input="$1"
+				_input="$1" 
 				;;
 			off)
 				_dpms=false
@@ -157,21 +159,54 @@ function display
 				shift
 				_input="$1"
 				;;
+			hdmi)
+				_hdmi=true
+				shift
+				case "$1" in
+					res=*)
+						_resolution="${1#*=}"
+						shift
+						_input="$1"
+						;;
+					right|left)
+						_resolution="1920x1080"
+						_input="$1"
+						;;
+					off)
+						_hdmi=false
+						;;
+					*)
+						printf "display hdmi -> Unknown option: %s\n" "$1" >&2
+						;;
+				esac
+				;;
+
 			*)
-				printf "Unknown option: %s\n" "$1" >&2
-				exit 1
+				printf "display -> Unknown option: %s\n" "$1" >&2
 				;;
 		esac
+		shift
 	done
 
 	if [[ $_dpms == true ]]; then
 		xset s on +dpms;  
 		printf "Display power management -> enabled\n"
+
 	elif [[ $_dpms == false ]]; then
 		xset s off -dpms;  
 		printf "Display power management -> disabled\n"
+
 	elif [[ $_brightness == true ]]; then
 		doas /sbin/wsconsctl display.brightness=$_input;
+
+	elif [[ $_hdmi == true ]]; then
+		xrandr --output HDMI-2 --primary --mode $_resolution --${_input}-of eDP-1
+		printf "Screen mirroring %s -> on\n" "$_resolution"
+
+	elif [[ $_hdmi == false ]]; then
+		xrandr --output HDMI-2 --off
+		printf "Screen mirroring -> off\n"
+
 	else
 		printf "ERR: invalid flag\n";
 	fi
