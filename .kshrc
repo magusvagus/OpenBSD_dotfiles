@@ -105,30 +105,28 @@ function swlw
 # turn on webcam streaming
 function streaming
 {  
-	typeset _streaming _input
+	typeset _streaming 
 
-	for _arg in "$@"; do
-		case "$_arg" in
+	while [[ $# -gt 0 ]]; do
+		case "$1" in
 			on)
 				_streaming=true
-				_input="$1"
 				;;
 			off)
 				_streaming=false
-				_input="$1"
 				;;
 			*)
 				printf "ERR: invalid flag\n"; >&2
-				exit 1
 				;;
 		esac
+		shift
 	done
 
-	if [[ _streaming == true ]]; then
+	if [[ "$_streaming" == true ]]; then
 		doas sysctl kern.audio.record=1;
 		xhost +local:;
 		printf "Video streaming -> enabled\n";
-	elif [[ _streaming == false ]]; then
+	elif [[ "$_streaming" == false ]]; then
 		doas sysctl kern.audio.record=0;
 		xhost -local:;
 		printf "Video streaming -> disabled\n";
