@@ -15,7 +15,10 @@ set -A DOTFILES \
 
 # .config files
 set -A DOT_CONF \
-	".config/fastfetch/" \
+	".config/fastfetch" \
+	".config/keynav" \
+	".config/mpd" \
+	".config/picom"
 
 printf "\n";
 
