@@ -31,6 +31,8 @@
 # KSH OPTIONS
 # -----------
 
+PROMPT_SYMBOL="󰘧"
+
 TERM=xterm-256color
 
 # set standart system editor
@@ -273,12 +275,12 @@ else
 		. $HOME/.ksh-gitprompt.sh
 
 		# set custom ksh PS1 command line /w git
-		export PS1=" \[\e[35m\]󱢗\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[32m\]\w\[\e[m\]\$(__git_ps1 \" \e[35m\n │\e[36m %s\e[36m]\n\e[35m └󰘧→\e[m\") "   
+		export PS1=" \[\e[35m\]$PROMPT_SYMBOL\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[32m\]\w\[\e[m\]\$(__git_ps1 \" \e[35m\n │\e[36m %s\e[36m]\n\e[35m └󰘧→\e[m\") "   
 		alias neofetch='fastfetch'
 
 	else
 		# PS1 without git
-		export PS1=" \[\e[35m\]󱢗\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[32m\]\w\[\e[m\] "
+		export PS1=" \[\e[35m\]$PROMPT_SYMBOL\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[32m\]\w\[\e[m\] "
 		alias neofetch='fastfetch'
 	fi
 
