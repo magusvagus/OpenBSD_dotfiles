@@ -31,6 +31,7 @@
 # KSH OPTIONS
 # -----------
 
+# set command line symbol
 PROMPT_SYMBOL="󰘧"
 
 TERM=xterm-256color
@@ -295,17 +296,6 @@ else
 	clear
 	fastfetch
 fi
-
-
-# ------------------
-# DEAD CODE TO CHECK
-# ------------------
-
-# alias tmux="tmux -f ~/.tmux.conf"
-# # for tmux keep starting with terminal, not replicating inside itself
-# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-#   exec tmux
-# fi
 
 
 # -------
