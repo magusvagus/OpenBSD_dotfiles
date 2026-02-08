@@ -32,7 +32,9 @@
 # -----------
 
 # set command line symbol
-PROMPT_SYMBOL="󰘧"
+BOLD_START="\\033[1m"
+BOLD_END="\\033[0m"
+PROMPT_SYMBOL="$BOLD_START󰘧$BOLD_END"
 
 TERM=xterm-256color
 
@@ -218,6 +220,22 @@ function ccal
 {  
 	DAY=$(date +%e | tr -d ' ')  # Remove leading space   
 	cal | sed -E "s/(^|[^0-9])($DAY)([^0-9]|$)/\1$(tput setaf 1)$(tput bold)\2$(tput sgr0)\3/g"   
+}
+
+# display status of internal and external battery
+function batt
+{
+	typeset _int_bat;
+	typeset _ext_bat;
+
+	_int_bat=$(sysctl hw.sensors.acpibat0.watthour3);
+	_ext_bat=$(sysctl hw.sensors.acpibat1.watthour3);
+
+	_int_bat="${_int_bat#*=}"
+	_ext_bat="${_ext_bat#*=}"
+
+	printf "Internal Battery: %s\n" "$_int_bat";
+	printf "External Battery: %s\n" "$_ext_bat";
 }
 
 
