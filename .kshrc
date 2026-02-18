@@ -62,6 +62,8 @@ set -o vi-tabcomplete #enable tab completion in vi mode using =
 # export socket for mpd
 export MPD_HOST="$HOME/.config/mpd/socket"
 
+# export hledger journal file path
+export LEDGER_FILE=/home/ed/finance/general.journal
 
 # ---------
 # FUNCTIONS
