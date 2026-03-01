@@ -347,6 +347,7 @@ alias vi='nvim'
 
 # bash '$ doas !!' alternative for ksh
 alias doas!!='doas $(fc -ln -1)'
+alias !!='doas $(fc -ln -1)'
 
 alias music='ncmpcpp'
 
