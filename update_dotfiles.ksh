@@ -20,6 +20,10 @@ set -A DOT_CONF \
 	".config/mpd" \
 	".config/picom" \
 	".config/nvim" \
+	".config/btop" \
+	".config/cmus" \
+	".config/dmenu" \
+	".config/dwm" \
 
 printf "\n";
 
