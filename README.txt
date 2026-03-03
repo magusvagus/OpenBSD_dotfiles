@@ -1,5 +1,7 @@
 DOTFILES
 	These are my OpenBSD dotfiles for backup.
 
-	Currently only selected dotfiles from the /home directory 
-	are added.
+	The update scipt copies chosen dotfiles from
+	/home to the repo for upload.
+
+
