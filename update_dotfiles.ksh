@@ -21,9 +21,19 @@ set -A DOT_CONF \
 	".config/picom" \
 	".config/nvim" \
 	".config/btop" \
+	".config/htop" \
 	".config/cmus" \
+
+	# suckless
+	".config/slstatus" \
 	".config/dmenu" \
 	".config/dwm" \
+	".config/slcok" \
+	".config/st" \
+
+	".config/qutebrowser" \
+	".config/wireshark" \
+	".config/weechat" \
 
 printf "\n";
 
