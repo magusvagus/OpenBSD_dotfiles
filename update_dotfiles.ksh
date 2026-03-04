@@ -15,6 +15,8 @@ set -A DOTFILES \
 
 # .config files
 set -A DOT_CONF \
+
+	# cli-tools
 	".config/fastfetch" \
 	".config/keynav" \
 	".config/mpd" \
@@ -23,6 +25,7 @@ set -A DOT_CONF \
 	".config/btop" \
 	".config/htop" \
 	".config/cmus" \
+	".config/weechat" \
 
 	# suckless
 	".config/slstatus" \
@@ -31,9 +34,9 @@ set -A DOT_CONF \
 	".config/slcok" \
 	".config/st" \
 
+	# gui-tools
 	".config/qutebrowser" \
 	".config/wireshark" \
-	".config/weechat" \
 
 printf "\n";
 
