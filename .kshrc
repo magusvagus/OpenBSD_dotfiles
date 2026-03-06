@@ -341,6 +341,7 @@ alias ip='printf "External IP -> "; curl ifconfig.me; printf "\n"' # website to 
 alias ls='lsd'
 alias tshark='tshark --color'
 alias cat='bat'
+alias led='hledger'
 
 #alias vim='nvim'
 alias vi='nvim'
