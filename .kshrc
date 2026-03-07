@@ -342,6 +342,7 @@ alias ls='lsd'
 alias tshark='tshark --color'
 alias cat='bat'
 alias led='hledger'
+alias bible='diatheke'
 
 #alias vim='nvim'
 alias vi='nvim'
