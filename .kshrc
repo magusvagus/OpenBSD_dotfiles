@@ -309,7 +309,7 @@ else
 	# for tmux keep starting with terminal, not replicating inside itself
 	if [[ -z $TMUX ]]; then
 		#exec tmux
-		tmux new
+		tmux -u new
 	fi
 
 	#run neofetch if st terminal is present
@@ -341,8 +341,8 @@ alias ip='printf "External IP -> "; curl ifconfig.me; printf "\n"' # website to 
 alias ls='lsd'
 alias tshark='tshark --color'
 alias cat='bat'
-alias led='hledger'
-alias hle='hledger'
+alias led='hledger --pretty'
+alias hle='hledger --pretty'
 alias bible='diatheke'
 
 #alias vim='nvim'

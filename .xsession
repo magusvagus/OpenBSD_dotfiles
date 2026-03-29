@@ -10,9 +10,15 @@
 	# set mouse to default theme (so it doesent blink while bootup)
     /usr/X11R6/bin/xsetroot -xcf /usr/local/share/icons/Everforest-C/cursors/default 32
 
+	# set multiple keyboards alt+shift to change
+	#setxkbmap -layout us,pl,ru -variant ,,phonetic -option grp:alt_shift_toggle   
+	setxkbmap -layout us,pl,ru,de -variant ,,phonetic,us -option grp:alt_shift_toggle   
+
 	# source ~/.Xmodmap for custom keymaps
+	# NOTE must be called AFTER sexkbmap
 	# (setting Caps Lock -> Tab)
-	xmodmap "$HOME/.Xmodmap"
+	#xmodmap "$HOME/.Xmodmap"
+	xmodmap -e "clear Lock" -e "keycode 66 = Tab"   
 
 	# remove mouse cursor
 	xbanish -s -t 2 -m nw &
