@@ -68,6 +68,11 @@ export LEDGER_FILE=/home/ed/finance/general.journal
 # ---------
 # FUNCTIONS
 # ---------
+#
+function dict
+{
+    command dict "$@" | less
+}   
 
 function wttr
 {
@@ -344,6 +349,7 @@ alias cat='bat'
 alias led='hledger --pretty'
 alias hle='hledger --pretty'
 alias bible='diatheke'
+alias lynx='lynx -tna'
 
 #alias vim='nvim'
 alias vi='nvim'
