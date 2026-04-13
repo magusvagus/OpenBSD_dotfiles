@@ -69,6 +69,28 @@ export LEDGER_FILE=/home/ed/finance/general.journal
 # FUNCTIONS
 # ---------
 #
+
+function bible
+{
+	if [[ "$1" == "list" ]]; then
+		command diatheke -b system -k modulelist
+		echo "\nExamples:"
+		echo "\tdiatheke -b Vulgate -k Genesis 1:1"
+		echo "\tbible Genesis 1:1"
+	elif [[ "$1" == "greek" ]]; then
+		shift # remove argument "greek"
+		command diatheke -b TR -o a -f plain -k "$@" | less
+	elif [[ "$1" == "hebrew" ]]; then
+		shift # remove argument "hebrew"
+		command diatheke -b WLC -o c -f plain -k "$@" | less
+	elif [[ "$1" == "latin" ]]; then
+		shift # remove argument "latin"
+		command diatheke -b Vulgate -f plain -k "$@" | less
+	else
+		command diatheke -b DRC -f plain -k "$@" | less
+	fi
+}
+
 function dict
 {
     command dict "$@" | less
@@ -348,8 +370,8 @@ alias tshark='tshark --color'
 alias cat='bat'
 alias led='hledger --pretty'
 alias hle='hledger --pretty'
-alias bible='diatheke'
-alias lynx='lynx -tna'
+#alias bible='diatheke'
+alias lynx='lynx -tna -number_fields -vikeys'
 
 #alias vim='nvim'
 alias vi='nvim'
