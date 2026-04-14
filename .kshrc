@@ -72,22 +72,58 @@ export LEDGER_FILE=/home/ed/finance/general.journal
 
 function bible
 {
+	# list of all bible books
+	set -A NEW_TEST "Matthew" "Mark" "Luke" "John" "Acts" "Romans" "1 Corinthians"\
+		"2 Corinthians" "Galatians" "Ephesians" "Philippians" "Colossians" "1 Thessalonians"\
+		"2 Thessalonians" "1 Timothy" "2 Timothy" "Titus" "Philemon" "Hebrews"\
+		"James" "1 Peter" "2 Peter" "1 John" "2 John" "3 John" "Jude" "Revelation"
+
+	set -A OLD_TEST "Genesis" "Exodus" "Leviticus" "Numbers" "Deuteronomy" "Joshua"\
+		"Judges" "Ruth" "1 Samuel" "2 Samuel" "1 Kings" "2 Kings" "1 Chronicles"\
+		"2 Chronicles" "Ezra" "Nehemiah" "Tobit" "Judith" "Esther" "1 Maccabees"\
+		"2 Maccabees" "Job" "Psalms" "Proverbs" "Ecclesiastes" "Song"\ "of"\ "Songs"\
+		"Wisdom" "Sirach" "Isaiah" "Jeremiah" "Lamentations" "Baruch" "Ezekiel"\
+		"Daniel" "Hosea" "Joel" "Amos" "Obadiah" "Jonah" "Micah" "Nahum" "Habakkuk"\
+		"Zephaniah" "Haggai" "Zechariah" "Malachi"
+
 	if [[ "$1" == "list" ]]; then
 		command diatheke -b system -k modulelist
 		echo "\nExamples:"
 		echo "\tdiatheke -b Vulgate -k Genesis 1:1"
-		echo "\tbible Genesis 1:1"
+		echo "\tbible genesis 1:1"
+		echo "\tbible greek john 1:1"
 	elif [[ "$1" == "greek" ]]; then
 		shift # remove argument "greek"
-		command diatheke -b TR -o a -f plain -k "$@" | less
+		command diatheke -b Byz -o a -f plain -k "$@"
 	elif [[ "$1" == "hebrew" ]]; then
 		shift # remove argument "hebrew"
-		command diatheke -b WLC -o c -f plain -k "$@" | less
+		command diatheke -b WLC -o c -f plain -k "$@" 
 	elif [[ "$1" == "latin" ]]; then
 		shift # remove argument "latin"
-		command diatheke -b Vulgate -f plain -k "$@" | less
+		command diatheke -b Vulgate -f plain -k "$@" 
+	elif [[ "$1" == "books" ]]; then
+		{
+			printf "\nOLD TESTAMENT\n_____________\n"
+			for BOOK in "${OLD_TEST[@]}"; do
+				printf '%s\n' "$BOOK"
+			done
+
+			printf "\nNew Testament\n_____________\n"
+			for BOOK in "${NEW_TEST[@]}"; do
+				printf '%s\n' "$BOOK"
+			done
+		} | less
+	elif [[ "$1" == "help" ]]; then
+		echo "\nUsage:"
+		echo "\tdiatheke -b Vulgate -k Genesis 1:1"
+		echo "\tbible Genesis 1:1"
+		echo "\tbible greek john 1:1"
+		echo "\tbible latin Genesis 1:1"
+		echo "\tbible hebrew Genesis 1:1"
+		echo "\tbible list"
+		echo "\tbible books"
 	else
-		command diatheke -b DRC -f plain -k "$@" | less
+		command diatheke -b DRC -f plain -k "$@" 
 	fi
 }
 
