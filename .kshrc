@@ -92,15 +92,35 @@ function bible
 		echo "\tdiatheke -b Vulgate -k Genesis 1:1"
 		echo "\tbible genesis 1:1"
 		echo "\tbible greek john 1:1"
+
 	elif [[ "$1" == "greek" ]]; then
 		shift # remove argument "greek"
-		command diatheke -b Byz -o a -f plain -k "$@"
+		if [[ "$1" == "full" ]]; then
+			for i in "${NEW_TEST[@]}"; do
+				command diatheke -b Byz -o a -f plain -k "$i"
+			done
+		else
+			command diatheke -b Byz -o a -f plain -k "$@"
+		fi
+
 	elif [[ "$1" == "hebrew" ]]; then
 		shift # remove argument "hebrew"
-		command diatheke -b WLC -o c -f plain -k "$@" 
+		if [[ "$1" == "full" ]]; then
+			for i in "${NEW_TEST[@]}"; do
+				command diatheke -b WLC -o c -f plain -k "$i" 
+			done
+		else
+			command diatheke -b WLC -o c -f plain -k "$@" 
+
 	elif [[ "$1" == "latin" ]]; then
 		shift # remove argument "latin"
-		command diatheke -b Vulgate -f plain -k "$@" 
+		if [[ "$1" == "full" ]]; then
+			for i in "${NEW_TEST[@]}"; do
+				command diatheke -b Vulgate -f plain -k "$i" 
+			done
+		else
+			command diatheke -b Vulgate -f plain -k "$@" 
+
 	elif [[ "$1" == "books" ]]; then
 		{
 			printf "\nOLD TESTAMENT\n_____________\n"
@@ -113,6 +133,7 @@ function bible
 				printf '%s\n' "$BOOK"
 			done
 		} | less
+
 	elif [[ "$1" == "help" ]]; then
 		echo "\nUsage:"
 		echo "\tdiatheke -b Vulgate -k Genesis 1:1"
@@ -122,6 +143,17 @@ function bible
 		echo "\tbible hebrew Genesis 1:1"
 		echo "\tbible list"
 		echo "\tbible books"
+
+	elif [[ "$1" == "full" ]]; then
+		{
+			for i in "${OLD_TEST[@]}"; do
+				command diatheke -b DRC -f plain -k "$i" 
+			done
+
+			for i in "${NEW_TEST[@]}"; do
+				command diatheke -b DRC -f plain -k "$i" 
+			done
+		}
 	else
 		command diatheke -b DRC -f plain -k "$@" 
 	fi
