@@ -111,6 +111,7 @@ function bible
 			done
 		else
 			command diatheke -b WLC -o c -f plain -k "$@" 
+		fi
 
 	elif [[ "$1" == "latin" ]]; then
 		shift # remove argument "latin"
@@ -120,6 +121,7 @@ function bible
 			done
 		else
 			command diatheke -b Vulgate -f plain -k "$@" 
+		fi
 
 	elif [[ "$1" == "books" ]]; then
 		{
