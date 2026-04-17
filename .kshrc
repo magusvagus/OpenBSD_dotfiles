@@ -86,79 +86,97 @@ function bible
 		"Daniel" "Hosea" "Joel" "Amos" "Obadiah" "Jonah" "Micah" "Nahum" "Habakkuk"\
 		"Zephaniah" "Haggai" "Zechariah" "Malachi"
 
-	if [[ "$1" == "list" ]]; then
-		command diatheke -b system -k modulelist
-		echo "\nExamples:"
-		echo "\tdiatheke -b Vulgate -k Genesis 1:1"
-		echo "\tbible genesis 1:1"
-		echo "\tbible greek john 1:1"
 
-	elif [[ "$1" == "greek" ]]; then
-		shift # remove argument "greek"
-		if [[ "$1" == "full" ]]; then
-			for i in "${NEW_TEST[@]}"; do
-				command diatheke -b Byz -o a -f plain -k "$i"
-			done
-		else
-			command diatheke -b Byz -o a -f plain -k "$@"
-		fi
+	case "$1" in
+		list)
+			command diatheke -b system -k modulelist
+			echo "\nExamples:"
+			echo "\tdiatheke -b Vulgate -k Genesis 1:1"
+			echo "\tbible genesis 1:1"
+			echo "\tbible greek john 1:1"
+			;;
 
-	elif [[ "$1" == "hebrew" ]]; then
-		shift # remove argument "hebrew"
-		if [[ "$1" == "full" ]]; then
-			for i in "${NEW_TEST[@]}"; do
-				command diatheke -b WLC -o c -f plain -k "$i" 
-			done
-		else
-			command diatheke -b WLC -o c -f plain -k "$@" 
-		fi
+		greek)
+			shift # remove argument "greek"
+			if [[ "$1" == "full" ]]; then
+				for BOOK in "${NEW_TEST[@]}"; do
+					command diatheke -b Byz -o a -f plain -k "$BOOK"
+				done
+				printf "[The New Testament in the Original Greek: Byzantine Textform 2013]\n"
+			else
+				command diatheke -b Byz -o a -f plain -k "$@"
+				printf "[The New Testament in the Original Greek: Byzantine Textform 2013]\n"
+			fi
+			;;
 
-	elif [[ "$1" == "latin" ]]; then
-		shift # remove argument "latin"
-		if [[ "$1" == "full" ]]; then
-			for i in "${NEW_TEST[@]}"; do
-				command diatheke -b Vulgate -f plain -k "$i" 
-			done
-		else
-			command diatheke -b Vulgate -f plain -k "$@" 
-		fi
+		hebrew)
+			shift # remove argument "hebrew"
+			if [[ "$1" == "full" ]]; then
+				for BOOK in "${NEW_TEST[@]}"; do
+					command diatheke -b WLC -o c -f plain -k "$BOOK" 
+					printf "[Westminster Leningrad Codex]\n"
+				done
+			else
+				command diatheke -b WLC -o c -f plain -k "$@" 
+				printf "[Westminster Leningrad Codex]\n"
+			fi
+			;;
 
-	elif [[ "$1" == "books" ]]; then
-		{
-			printf "\nOLD TESTAMENT\n_____________\n"
-			for BOOK in "${OLD_TEST[@]}"; do
-				printf '%s\n' "$BOOK"
-			done
+		latin)
+			shift # remove argument "latin"
+			if [[ "$1" == "full" ]]; then
+				for BOOK in "${NEW_TEST[@]}"; do
+					command diatheke -b Vulgate -f plain -k "$BOOK" 
+				done
+				printf "[Latin Vulgate]\n"
+			else
+				command diatheke -b Vulgate -f plain -k "$@" 
+				printf "[Latin Vulgate]\n"
+			fi
+			;;
 
-			printf "\nNew Testament\n_____________\n"
-			for BOOK in "${NEW_TEST[@]}"; do
-				printf '%s\n' "$BOOK"
-			done
-		} | less
+		books)
+			{
+				printf "\nOLD TESTAMENT\n_____________\n"
+				for BOOK in "${OLD_TEST[@]}"; do
+					printf '%s\n' "$BOOK"
+				done
 
-	elif [[ "$1" == "help" ]]; then
-		echo "\nUsage:"
-		echo "\tdiatheke -b Vulgate -k Genesis 1:1"
-		echo "\tbible Genesis 1:1"
-		echo "\tbible greek john 1:1"
-		echo "\tbible latin Genesis 1:1"
-		echo "\tbible hebrew Genesis 1:1"
-		echo "\tbible list"
-		echo "\tbible books"
+				printf "\nNew Testament\n_____________\n"
+				for BOOK in "${NEW_TEST[@]}"; do
+					printf '%s\n' "$BOOK"
+				done
+			} | less
+			;;
 
-	elif [[ "$1" == "full" ]]; then
-		{
-			for i in "${OLD_TEST[@]}"; do
-				command diatheke -b DRC -f plain -k "$i" 
-			done
+		help)
+			echo "\nUsage:"
+			echo "\tdiatheke -b Vulgate -k Genesis 1:1"
+			echo "\tbible Genesis 1:1"
+			echo "\tbible greek john 1:1"
+			echo "\tbible latin Genesis 1:1"
+			echo "\tbible hebrew Genesis 1:1"
+			echo "\tbible list"
+			echo "\tbible books"
+			;;
 
-			for i in "${NEW_TEST[@]}"; do
-				command diatheke -b DRC -f plain -k "$i" 
-			done
-		}
-	else
-		command diatheke -b DRC -f plain -k "$@" 
-	fi
+		full)
+			{
+				for BOOK in "${OLD_TEST[@]}"; do
+					command diatheke -b DRC -f plain -k "$BOOK" 
+				done
+
+				for BOOK in "${NEW_TEST[@]}"; do
+					command diatheke -b DRC -f plain -k "$BOOK" 
+				done
+				printf "[Douay-Rheims Bible, Challoner Revision]\n"
+			}
+			;;
+		*)
+			command diatheke -b DRC -f plain -k "$@" 
+			printf "[Douay-Rheims Bible, Challoner Revision]\n"
+			;;
+	esac
 }
 
 function dict
