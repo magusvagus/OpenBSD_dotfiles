@@ -114,8 +114,8 @@ function bible
 			if [[ "$1" == "full" ]]; then
 				for BOOK in "${NEW_TEST[@]}"; do
 					command diatheke -b WLC -o c -f plain -k "$BOOK" 
-					printf "[Westminster Leningrad Codex]\n"
 				done
+				printf "[Westminster Leningrad Codex]\n"
 			else
 				command diatheke -b WLC -o c -f plain -k "$@" 
 				printf "[Westminster Leningrad Codex]\n"
