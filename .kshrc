@@ -458,6 +458,7 @@ alias tshark='tshark --color'
 alias cat='bat'
 alias led='hledger --pretty'
 alias hle='hledger --pretty'
+alias vis='vd --theme=asciimono'
 #alias bible='diatheke'
 alias lynx='lynx -tna -number_fields -vikeys'
 
@@ -467,6 +468,7 @@ alias vi='nvim'
 # bash '$ doas !!' alternative for ksh
 alias doas!!='doas $(fc -ln -1)'
 alias !!='doas $(fc -ln -1)'
+
 
 alias music='ncmpcpp'
 
