@@ -1,0 +1,81 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+	"logo": {
+	 //"type": "small",
+		"source": "/home/ed/.config/fastfetch/blackmesa_grey.txt",
+		"type": "file",
+	"padding": {
+	  "top": 2,
+	  "left": 3
+	}
+},
+	"display": {
+		"separator": "-> "
+	},
+  "modules": [
+	"break",
+	{
+		"type": "title",
+		"key": "      USER ",
+		"keyColor": "yellow"
+	},
+	{
+		"type": "custom",
+		"format": "{#1}┌─────────── {#33}HARDWARE {#1}───────────┐{#}"
+	},
+	{
+		"type": "host",
+		"key": "  󰍹 ",
+		"format": "{version}",
+		"keyColor": "yellow"
+	},
+	// {
+	// 	"type": "kernel",
+	// 	"key": "   ",
+	// 	"keyColor": "red"
+	// },
+	{
+		"type": "cpu",
+		"format": "{1}",
+		"key": "   ",
+		"keyColor": "green"
+	},
+	{
+		"type": "gpu",
+		"format": "{name:25} ",
+		"key": "   ",
+		"keyColor": "magenta"
+	},
+	{
+		"type": "custom",
+		"format": "{#1}├─────────── {#33}SOFTWARE {#1}───────────┤{#}"
+	 
+	},
+	{
+		"type": "os",
+		"format": "{1}",
+		"key": "   ",
+		"keyColor": "yellow"
+	},
+	{
+		"type": "shell",
+		"format": "{1} {4}",
+		"key": "   ",
+		"keyColor": "green"
+	},
+	{
+		"type": "wm",
+		"key": "   ",
+		"format": "{2}",
+		"keyColor": "magenta"
+	},
+	{
+		"type": "custom",
+		"format": "{#1}└────────────────────────────────┘{#}"
+	},
+	{
+		"type": "custom",
+		"format": "   {#1}{#90}󰘧 {#}  {#1}{#31}l {#}  {#1}{#32}a {#}  {#1}{#33}m {#}  {#1}{#34}b {#}  {#1}{#35}d {#}  {#1}{#36}a {#}  {#1}{#37}󰘧 {#} "
+	}
+	]
+}

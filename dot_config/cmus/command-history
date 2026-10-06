@@ -1,0 +1,42 @@
+q
+add .
+clear
+live-filter 
+add rtorrent/
+add media/music/
+add rtorrent/downloaded_torrents/
+add rtorrent/*
+add media/music
+add media/music/Pendulum\ ALAC
+add ~/media/music/
+add ~/music/
+help
+add music
+add Downloads/
+qa
+colorscheme default
+colorscheme gruvbox
+colorscheme gruvbox-alt
+colorschem
+save
+pl-rename gothic-ambient
+clear selected
+pl-rename nature-ambient
+remove
+pl-create ambient
+pl-create
+create-pl ambient
+creat ambient
+pl ambient
+new pl
+pl
+create pl
+add music/
+add ~/convert/
+add ~/
+add ~/Downloads/
+add ~/Downloads
+add 
+add
+add ~/Do
+add ~/music

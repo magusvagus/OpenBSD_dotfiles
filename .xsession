@@ -30,7 +30,7 @@
 	xidle -no -program "/usr/local/bin/slock" -timeout 599 &
 	
 	# sets wallpaper
-	feh --bg-scale --randomize "$HOME/wallpaper/current_active/" &
+	feh --bg-scale --randomize "$HOME/media/wallpaper/current_active/" &
 
 	# starts compositor
 	picom --config "$HOME/.config/picom/picom.conf" &

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+	"logo": {
+	"type": "small",
+	"padding": {
+	  "top": 2
+	}
+},
+	"display": {
+		"separator": "-> "
+	},
+  "modules": [
+	"break",
+	{
+		"type": "title",
+		"key": "      USER ",
+		"keyColor": "yellow"
+	},
+	{
+		"type": "custom",
+		"format": "{#1}┌─────────── {#33}HARDWARE {#}───────────┐{#}"
+	},
+	{
+		"type": "host",
+		"key": "  󰍹 ",
+		"format": "{version}",
+		"keyColor": "yellow"
+	},
+	// {
+	// 	"type": "kernel",
+	// 	"key": "   ",
+	// 	"keyColor": "red"
+	// },
+	{
+		"type": "cpu",
+		"format": "{1}",
+		"key": "   ",
+		"keyColor": "green"
+	},
+	{
+		"type": "gpu",
+		"format": "{name:25} ",
+		"key": "   ",
+		"keyColor": "magenta"
+	},
+	{
+		"type": "custom",
+		"format": "{#1}├─────────── {#33}SOFTWARE {#}───────────┤{#}"
+	 
+	},
+	{
+		"type": "os",
+		"key": "   ",
+		"keyColor": "yellow"
+	},
+	{
+		"type": "shell",
+		"format": "{1} {4}",
+		"key": "   ",
+		"keyColor": "green"
+	},
+	{
+		"type": "wm",
+		"key": "   ",
+		"format": "{2}",
+		"keyColor": "magenta"
+	},
+	{
+		"type": "custom",
+		"format": "{#1}└────────────────────────────────┘{#}"
+	},
+	{
+		"type": "custom",
+		"format": "   {#1}{#90}󰐼 {#}  {#1}{#31}󰐼 {#}  {#1}{#32}󰐼 {#}  {#1}{#33}󰐼 {#}  {#1}{#34}󰐼 {#}  {#1}{#35}󰐼 {#}  {#1}{#36}󰐼 {#}  {#1}{#37}󰐼 {#} "
+	}
+	]
+}

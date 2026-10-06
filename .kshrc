@@ -34,7 +34,10 @@
 # set command line symbol
 BOLD_START="\\033[1m"
 BOLD_END="\\033[0m"
-PROMPT_SYMBOL="$BOLD_START󰘧$BOLD_END"
+PROMPT_SYMBOL="󰘧"
+
+# format command line
+PROMPT_SYMBOL="$BOLD_START$PROMPT_SYMBOL$BOLD_END"
 
 TERM=xterm-256color
 
@@ -68,7 +71,6 @@ export LEDGER_FILE=/home/ed/finance/general.journal
 # ---------
 # FUNCTIONS
 # ---------
-#
 
 function bible
 {
@@ -459,19 +461,22 @@ alias cat='bat'
 alias led='hledger --pretty'
 alias hle='hledger --pretty'
 alias vid='vd --theme=asciimono'
-alias sci='sc-im'
+alias sc='sc-im'
+alias cp='cp -v'
+alias mv='mv -v'
 #alias bible='diatheke'
 alias lynx='lynx -tna -number_fields -vikeys'
-
-#alias vim='nvim'
+alias music='ncmpcpp'
 alias vi='nvim'
 
 # bash '$ doas !!' alternative for ksh
 alias doas!!='doas $(fc -ln -1)'
 alias !!='doas $(fc -ln -1)'
 
+# check for backup before shutting off
+alias shutdown='if pgrep -x rsync > /dev/null; then echo "[ ERR ] Backup running!"; else doas shutdown -p now; fi'
+alias reboot='if pgrep -x rsync > /dev/null; then echo "[ ERR ] Backup running!"; else doas reboot; fi'
 
-alias music='ncmpcpp'
 
 
 

@@ -1,0 +1,59 @@
+sw_volume: 100
+audio_device_state:1:sndio output
+audio_device_state:1:HTTP Stream
+state: play
+current: 26
+time: 124.98700000000001
+random: 1
+repeat: 1
+single: 0
+consume: 0
+crossfade: 5
+mixrampdb: 0
+mixrampdelay: -1
+lastloadedplaylist: 
+playlist_begin
+0:RuneScape - Original Soundtrack Classics/Disc 1/01 - Ian Taylor - Scape Main.flac
+1:RuneScape - Original Soundtrack Classics/Disc 1/02 - Ian Taylor - Newbie Melody.flac
+2:RuneScape - Original Soundtrack Classics/Disc 1/03 - Ian Taylor - Harmony.flac
+3:RuneScape - Original Soundtrack Classics/Disc 1/04 - Ian Taylor - Autumn Voyage.flac
+4:RuneScape - Original Soundtrack Classics/Disc 1/05 - Ian Taylor - Yesteryear.flac
+5:RuneScape - Original Soundtrack Classics/Disc 1/06 - Ian Taylor - Flute Salad.flac
+6:RuneScape - Original Soundtrack Classics/Disc 1/07 - Ian Taylor - Barbarianism.flac
+7:RuneScape - Original Soundtrack Classics/Disc 1/08 - Ian Taylor - Al Kharid.flac
+8:RuneScape - Original Soundtrack Classics/Disc 1/09 - Ian Taylor - Sea Shanty 2.flac
+9:RuneScape - Original Soundtrack Classics/Disc 1/10 - Ian Taylor - Baroque.flac
+10:RuneScape - Original Soundtrack Classics/Disc 1/11 - Ian Taylor - Waterfall.flac
+11:RuneScape - Original Soundtrack Classics/Disc 1/12 - Ian Taylor - Nightfall.flac
+12:RuneScape - Original Soundtrack Classics/Disc 1/13 - Ian Taylor - Adventure.flac
+13:RuneScape - Original Soundtrack Classics/Disc 1/14 - Ian Taylor - Medieval.flac
+14:RuneScape - Original Soundtrack Classics/Disc 1/15 - Ian Taylor - Garden.flac
+15:RuneScape - Original Soundtrack Classics/Disc 1/16 - Ian Taylor - Still Night.flac
+16:RuneScape - Original Soundtrack Classics/Disc 1/17 - Ian Taylor - Fanfare.flac
+17:RuneScape - Original Soundtrack Classics/Disc 1/18 - Ian Taylor - Arrival.flac
+18:RuneScape - Original Soundtrack Classics/Disc 1/19 - Ian Taylor - Horizon.flac
+19:RuneScape - Original Soundtrack Classics/Disc 1/20 - Ian Taylor - Castlewars.flac
+20:RuneScape - Original Soundtrack Classics/Disc 1/21 - Ian Taylor - Scape Sad.flac
+21:RuneScape - Original Soundtrack Classics/Disc 1/22 - Ian Taylor - Crystal Sword.flac
+22:RuneScape - Original Soundtrack Classics/Disc 1/23 - Ian Taylor - Dark.flac
+23:RuneScape - Original Soundtrack Classics/Disc 1/24 - Ian Taylor - Book of Spells.flac
+24:RuneScape - Original Soundtrack Classics/Disc 2/01 - Ian Taylor - Fanfare 2.flac
+25:RuneScape - Original Soundtrack Classics/Disc 2/02 - Ian Taylor - Gnome Village.flac
+26:RuneScape - Original Soundtrack Classics/Disc 2/03 - Ian Taylor - Romper Chomper.flac
+27:RuneScape - Original Soundtrack Classics/Disc 2/04 - Ian Taylor - Lightness.flac
+28:RuneScape - Original Soundtrack Classics/Disc 2/05 - Ian Taylor - Village.flac
+29:RuneScape - Original Soundtrack Classics/Disc 2/06 - Ian Taylor - Cave Background.flac
+30:RuneScape - Original Soundtrack Classics/Disc 2/07 - Ian Taylor - Sad Meadow.flac
+31:RuneScape - Original Soundtrack Classics/Disc 2/08 - Ian Taylor - Monkey Madness.flac
+32:RuneScape - Original Soundtrack Classics/Disc 2/09 - Ian Taylor - Dogs of War.flac
+33:RuneScape - Original Soundtrack Classics/Disc 2/10 - Ian Taylor - Altar Ego.flac
+34:RuneScape - Original Soundtrack Classics/Disc 2/11 - Ian Taylor - Elven Mist.flac
+35:RuneScape - Original Soundtrack Classics/Disc 2/12 - Adam Bond - Work Work Work.flac
+36:RuneScape - Original Soundtrack Classics/Disc 2/13 - Adam Bond - Fe Fi Fo Fum.flac
+37:RuneScape - Original Soundtrack Classics/Disc 2/14 - Ian Taylor - Mudskipper Melody.flac
+38:RuneScape - Original Soundtrack Classics/Disc 2/15 - Ian Taylor - Gnomeball.flac
+39:RuneScape - Original Soundtrack Classics/Disc 2/16 - Ian Taylor - Chompy Hunt.flac
+40:RuneScape - Original Soundtrack Classics/Disc 2/17 - Ian Taylor - Harmony 2.flac
+41:RuneScape - Original Soundtrack Classics/Disc 2/18 - Ian Taylor - Home Sweet Home.flac
+42:RuneScape - Original Soundtrack Classics/Disc 2/19 - Ian Taylor - Background.flac
+playlist_end

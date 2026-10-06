@@ -1,0 +1,7 @@
+
+2025/05/28 (18:13:46) | ===> btop++ v.1.4.0
+2025/05/28 (18:13:46) | ERROR: No UTF-8 locale detected!
+Use --utf-force argument to force start if you're sure your terminal can handle it.
+
+2025/05/28 (18:13:55) | ===> btop++ v.1.4.0
+2025/05/28 (18:13:55) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
